@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+        function handleClick() {
+            var age = document.getElementById("age").value;
+            var eyes = "eyes_  ".concat(document.getElementById("eyes").value);
+            var skintype = "skin_type_".concat(document.getElementById("skintype").value);
+            var haircolor = "hair_color_ ".concat(document.getElementById("haircolor").value);
+            var hairtype = "hair_type_ ".concat(document.getElementById("hairtype").value);
+            var hairtexture = "hair_texture_ ".concat(document.getElementById("hairtexture").value);
+            var skintone = "skin_tone_ ".concat(document.getElementById("skintone").value);
+            var skinundertone = "skin_undertone_ ".concat(document.getElementById("skinundertone").value);
+
+            var params = {};
+            params['avg_age'] = age;
+            params[eyes] = 1;
+            params[skintype] = 1;
+            params[skintone] = 1;
+            params[skinundertone] = 1;
+            params[haircolor] = 1;
+            params[hairtype] = 1;
+            params[hairtexture] = 1;
+            queryParams = "http://127.0.0.1:5000/makemeup/api/v1.0/recommendations?".concat(encodeQueryData(params));
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(request) {
+                if (this.readyState == 4 && this.status == 200) {
+                    var response = request.currentTarget.response
+                    var result = JSON.parse(response);
+
+                    contentDiv = document.getElementById("content");
+                    brands = result.recommendations[0]
+                    categories = result.recommendations[1]
+                    products = result.recommendations[2]
+                    words = result.recommendations[3]
+
+                    contentDiv.innerHTML = "<h2> Recommendations </h2>"
+                    for (var i=0; i < brands.length; i++) {
+                        contentDiv.innerHTML += brands[i] + " "
+                        contentDiv.innerHTML += categories[i] + " "
+                        contentDiv.innerHTML += products[i]
+                        contentDiv.innerHTML += " (Tags: "
+                        tWords = words[i]
+                        for (var j=0; j < tWords.length; j++) {
+                            word = tWords[j]
+                            if (word) {
+                              contentDiv.innerHTML += word
+                              if (j != tWords.length-1) {
+                                contentDiv.innerHTML += ", "
+                              }
+                            }
+                        }
+                        contentDiv.innerHTML += ")"
+                        contentDiv.innerHTML += "<br/>"
+                    }
+                }
+            };
+            xhttp.open("GET", queryParams, true);
+            xhttp.send();
+        }
+
+        function encodeQueryData(data)
+        {
+           var ret = [];
+           for (var d in data)
+              ret.push(encodeURIComponent(d) + "=" + encodeURIComponent(data[d]));
+           return ret.join("&");
+        }
+  </script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Discover Beauty</h1>
+  <p class="text-muted">Personalized makeup recommendations.</p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <h3>Age</h3>
+        <select id="age">
+            <option value="15">15</option>
+            <option value="19">19</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="36">36</option>
+            <option value="44">44</option>
+        </select>
+    </div>
+    <div class="col-sm-3">
+      <h3>Skin Type</h3>
+        <select id="skintype">
+            <option value="combination">Combination</option>
+            <option value="acne-prone">Acne-prone</option>
+            <option value="normal">Normal</option>
+            <option value="dry">Dry</option>
+            <option value="oily">Oily</option>
+            <option value="sensitive">Sensitive</option>
+            <option value="very oily">Very Oily</option>
+            <option value="very dry">Very Dry</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div class="col-sm-3">
+      <h3>Skin Tone</h3>
+        <select id="skintone">
+            <option value="fair">Fair</option>
+            <option value="fair-medium">Fair-Medium</option>
+            <option value="medium">Medium</option>
+            <option value="olive">Olive</option>
+            <option value="tan">Tan</option>
+            <option value="dark">Dark</option>
+            <option value="medium brown">Medium Brown</option>
+            <option value="deep dark">Deep Dark</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div class="col-sm-3">
+      <h3>Skin Undertone</h3>
+        <select id="skinundertone">
+            <option value="warm">Warm</option>
+            <option value="neutral">Neutral</option>
+            <option value="cool">Cool</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div class="col-sm-3">
+      <h3>Eyes</h3>
+        <select id="eyes">
+            <option value="black">Black</option>
+            <option value="brown">Brown</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="hazel">Hazel</option>
+            <option value="grey">Grey</option>
+            <option value="violet">Violet</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div class="col-sm-3">
+      <h3>Hair Color</h3>
+        <select id="haircolor">
+            <option value="black">Black</option>
+            <option value="brown">Brown</option>
+            <option value="brunette">Brunette</option>
+            <option value="blonde">Blonde</option>
+            <option value="red">Red</option>
+            <option value="grey">Grey</option>
+            <option value="silver">Silver</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div class="col-sm-3">
+      <h3>Hair Type</h3>
+        <select id="hairtype">
+            <option value="straight">Straight</option>
+            <option value="curly">Curly</option>
+            <option value="relaxed">Relaxed</option>
+            <option value="kinky">Kinky</option>
+            <option value="wavy">Wavy</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div class="col-sm-3">
+      <h3>Hair Texture</h3>
+        <select id="hairtexture">
+            <option value="medium">Medium</option>
+            <option value="fine">Fine</option>
+            <option value="coarse">Coarse</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-11"  style="text-align: center;">
+      <h3>
+        <button class="btn btn-lg btn-primary" type="button" onClick="handleClick()">Get Started</button>
+      </h3>
+    </div>
+</div>
+  <hr class="featurette-divider">
+  <div id="content" style="text-align:center;"/>
+</div>
+
+</body>
+</html>
