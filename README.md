@@ -1,4 +1,4 @@
-Data science and makeup an unlikely combination? Not really! Sure cosmetics are  clubbed together in the retail consumer space and treated similar to other products, but I honestly think it deserves a little more TLC. This article estimates the beauty industry (skin-care and makeup) to be a whopping 42 billion dollar industry. The full list of products included in this category can be found here.
+Data science and makeup an unlikely combination? Not really! Sure cosmetics are  clubbed together in the retail consumer space and treated similar to other products, but I honestly think it deserves a little more TLC. The beauty industry (skin-care and makeup) is estimated to be worth a whopping 42 billion dollars. 
 
 An interesting trend to note is the massive democratization of makeup with the advent of digital media. This has caused a shift in how millennials buy products. This clearly explains the rise of influencers with beauty blogs and youtube channels that have massive fan followings, and have marketing partnerships with big companies such as L’Oreal.
 
