@@ -6,12 +6,12 @@ Galvanize Capstone Project - October 2016
 
 ## Overview
 ***
-Cosmetic products are used by everyone! Discover beauty is a recommender that generates personalized cosmetic recommendations for you based on your unique requirements. It also provides context rich recommendations by which you can know more about the products specifically recommender for you! 
+Cosmetic products are used by everyone! Discover beauty is a recommender that generates personalized cosmetic recommendations for you based on your unique requirements. It also provides context rich recommendations by which you can know more about the products specifically recommended for you! 
 
 ## Data
 ***
-All data to build the recommender was scrapped from makeupalley.com. makeupalley.com is an authoritative resource for cosmetic product reviews. It has a dedicated community of users committed to exploring and providing accurate feedback on their experiences with various cosmetic products. 
-The following information was scrapped and stored in a Mongoldb database:
+All data to build the recommender was scraped from makeupalley.com. makeupalley.com is an authoritative resource for cosmetic product reviews. It has a dedicated community of users committed to exploring and providing accurate feedback on their experiences with various cosmetic products. 
+The following information was scraped and stored in a Mongodb database:
 * Products: Attributes included productID, name, brand, category, price, packaging, overall rating, number of reviews, %buyagain.
 * Reviews: Attributes included productID, userID, user rating, review, user age, and other features about the user such as hair color, eye color etc.
 
