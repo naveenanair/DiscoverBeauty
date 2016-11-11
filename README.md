@@ -44,7 +44,7 @@ I also used the product review to add additional context to recommendations. I u
 
 ##  Future work 
 ***
-Build a color base of makeup products , allow user to ender favorite lipstick color and generate cost effective recommendations. 
+Build a color base of makeup products , allow user to enter favorite lipstick color and generate cost effective recommendations. 
 
 ##  Packages used 
 ***
