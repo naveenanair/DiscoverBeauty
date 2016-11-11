@@ -33,6 +33,12 @@ This makes intuitive: users that have a certain characteristic for eg. acne pron
 ### Word Tagging 
 I also used the product review to add additional context to recommendations. I used word tagging to tag description words or adjectives used to describe products in the reviews eg. words like natural or dry were selected. I then aggregated the ten most frequently occurring description words for each item. 
 
+##  Web app 
+***
+![alt text](https://github.com/naveenanair/DiscoverBeauty/blob/master/Screen%20Shot%202016-10-18%20at%2012.13.30%20PM.png)
+
+The web application accepts user characteristics as the input and generates context rich user specific recommendations. 
+
 ##  Repo structure 
 ***
 * Model
