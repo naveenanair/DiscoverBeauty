@@ -10,7 +10,7 @@ Cosmetic products are used by everyone! Discover beauty is a recommender that ge
 
 ## Data
 ***
-All data to build the recommender was scraped from makeupalley.com. makeupalley.com is an authoritative resource for cosmetic product reviews. It has a dedicated community of users committed to exploring and providing accurate feedback on their experiences with various cosmetic products. 
+The data to build the recommender was scraped from makeupalley.com which is an authoritative resource for cosmetic product reviews.It has a dedicated community of users committed to exploring and providing accurate feedback on their experiences with various cosmetic products. 
 The following information was scraped and stored in a Mongodb database:
 * Products: Attributes included productID, name, brand, category, price, packaging, overall rating, number of reviews, %buyagain.
 * Reviews: Attributes included productID, userID, user rating, review, user age, and other features about the user such as hair color, eye color etc.
