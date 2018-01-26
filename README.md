@@ -1,6 +1,5 @@
 
 ## Discover Beauty 
-***
 Galvanize Capstone Project - October 2016 
 ![alt text](https://github.com/naveenanair/DiscoverBeauty/blob/master/images/discover_beauty.png)
 
@@ -8,14 +7,12 @@ Galvanize Capstone Project - October 2016
 Cosmetic products are used by everyone! Discover beauty is a recommender that generates personalized cosmetic recommendations for you based on your unique requirements. It also provides context rich recommendations by which you can know more about the products specifically recommended for you! 
 
 ## Data
-***
 The data to build the recommender was scraped from makeupalley.com which is an authoritative resource for cosmetic product reviews.It has a dedicated community of users committed to exploring and providing accurate feedback on their experiences with various cosmetic products. 
 The following information was scraped and stored in a Mongodb database:
 * Products: Attributes included productID, name, brand, category, price, packaging, overall rating, number of reviews, %buyagain.
 * Reviews: Attributes included productID, userID, user rating, review, user age, and other features about the user such as hair color, eye color etc.
 
 ## Data Pipeline 
-***
 ![alt text](https://github.com/naveenanair/DiscoverBeauty/blob/master/images/pipeline.png)
 
 ### Matrix Factorization 
@@ -33,13 +30,11 @@ This makes intuitive: users that have a certain characteristic for eg. acne pron
 I also used the product review to add additional context to recommendations. I used word tagging to tag description words or adjectives used to describe products in the reviews eg. words like natural or dry were selected. I then aggregated the ten most frequently occurring description words for each item. 
 
 ##  Web app 
-***
-![alt text](https://github.com/naveenanair/DiscoverBeauty/blob/master/webapp.png)
+![alt text](https://github.com/naveenanair/DiscoverBeauty/blob/master/images/webapp.png)
 
 The web application accepts user characteristics as the input and generates context rich user specific recommendations. 
 
 ##  Repo structure 
-***
 * Model
 - recommender.py
 - run.py
@@ -53,11 +48,9 @@ The web application accepts user characteristics as the input and generates cont
 - discover.html
 
 ##  Future work 
-***
 Build a color base of makeup products , allow user to enter favorite lipstick color and generate cost effective recommendations. 
 
 ##  Packages used 
-***
 * NumPy
 * pandas
 * scikit-learn
